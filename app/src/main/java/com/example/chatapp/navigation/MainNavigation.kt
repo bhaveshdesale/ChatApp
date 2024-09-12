@@ -11,21 +11,20 @@ import com.example.chatapp.screens.StartScreen
 
 @Composable
 fun MainNavigation(modifier: Modifier = Modifier) {
-    val navHostController= rememberNavController()
-    NavHost(navController = navHostController, startDestination = Start){
-        composable(Start){
+    val navHostController = rememberNavController()
+    NavHost(navController = navHostController, startDestination = Start) {
+        composable(Start) {
             StartScreen(navHostController)
         }
-        composable(Home){
+        composable(Home) {
             HomeScreen(navHostController)
         }
-        composable(Chat1){
+        composable(Chat1) {
             ChatScreen(navHostController)
-
         }
     }
-
 }
-const val Start="start_screen"
-const val Home= "home_screen"
-const val Chat1="chat_screen"
+
+const val Start = "start_screen"
+const val Home = "home_screen"
+const val Chat1 = "chat_screen"

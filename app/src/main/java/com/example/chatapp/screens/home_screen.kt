@@ -63,25 +63,25 @@ fun HomeScreen(navHostController: NavHostController) {
                         .padding(top = 15.dp)
                 )
                 LazyColumn(modifier = Modifier.padding(top = 30.dp, bottom = 15.dp)) {
-                    items(personList, key = { person -> person.id }) {  // Use `person` to avoid variable name collision
+                    items(personList, key = { it.id } ){ // Using `person` to avoid confusion
                         UserEachRow(person = it) {
                             // Handle navigation safely with try-catch
-                            try {
-                                // Store the person object in savedStateHandle before navigating
-                                navHostController.currentBackStackEntry?.savedStateHandle?.set("data" ,it)
-                                navHostController.navigate(Chat1) // Correctly navigate to Chat screen
-                            } catch (e: Exception) {
-                                // Handle the crash if navigation fails
-                                e.printStackTrace()
-                            }
+
+                            // Store the person object in savedStateHandle before navigating
+                            navHostController.currentBackStackEntry?.savedStateHandle?.set(
+                                "data1",
+                                it)
+                            navHostController.navigate(Chat1)
+                        }
                         }
                     }
                 }
 
+
             }
         }
     }
-}
+
 
 @Composable
 fun UserEachRow(person: Person, onClick: () -> Unit) {
