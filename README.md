@@ -39,15 +39,3 @@ Feel free to contribute by submitting issues or pull requests. Feedback and sugg
 
 License
 This project is licensed under the MIT License.
-
-
-### Steps to Use This README
-
-1. **Upload Images**: Ensure that you upload your images to your repository under an `images` directory or another suitable location.
-
-2. **Update Image URLs**: Replace the placeholder URLs (`https://github.com/your-username/chat-app-ui/raw/main/images/...`) with the actual URLs of your images.
-
-3. **Commit Changes**: Save this `README.md` file and commit it to your repository.
-
-Let me know if you need any more help with your project!
-
