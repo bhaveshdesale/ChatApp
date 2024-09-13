@@ -12,7 +12,7 @@
 ## Screenshots
 
 ### App Starting Screen
-![App Starting Screen](https://github.com/your-username/chat-app-ui/raw/main/images/app-starting-screen.png)
+![App Starting Screen](https://github.com/bhavesh/ChatApp/app/src/main/res/drawable/8f37cc85-6a3a-41c7-a481-c258c8ca7ca7.jpg)
 
 ### Home Screen
 ![Home Screen](https://github.com/your-username/chat-app-ui/raw/main/images/home-screen.png)
