@@ -16,5 +16,9 @@ val personList = listOf(
     Person(1, "John", R.drawable.person_1),
     Person(2, "Jane", R.drawable.person_2),
     Person(3, "Alice", R.drawable.person_3),
-    Person(4, "Bob", R.drawable.person_4)
+    Person(4, "Bob", R.drawable.person_4),
+            Person(5, "John", R.drawable.person_1),
+Person(6, "Jane", R.drawable.person_2),
+Person(7, "Alice", R.drawable.person_3),
+Person(8, "Bob", R.drawable.person_4)
 )

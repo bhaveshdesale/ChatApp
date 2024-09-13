@@ -24,17 +24,27 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.Components.ButtonComponent
 import com.example.chatapp.Components.IconComponentImageVector
 import com.example.chatapp.Components.SpacerHeight
 import com.example.chatapp.Components.SpacerWidth
 import com.example.chatapp.R
 import com.example.chatapp.navigation.Home
+import com.example.chatapp.navigation.Start
 import com.example.chatapp.ui.theme.Aqua
 
+@Preview
+@Composable
+private fun PreviewStartScreen() {
+    val navHostController =rememberNavController()
+    StartScreen(navHostController = navHostController)
+
+}
 @Composable
 fun StartScreen(
     navHostController: NavHostController,

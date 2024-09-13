@@ -15,18 +15,19 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.Gray
+import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.Components.IconComponentImageVector
 import com.example.chatapp.Components.IconComponentsDrawable
 import com.example.chatapp.Components.SpacerWidth
-import com.example.chatapp.R
 import com.example.chatapp.R.drawable.mic
 import com.example.chatapp.data.Chat
 import com.example.chatapp.data.ChatList
@@ -36,9 +37,18 @@ import com.example.chatapp.ui.theme.LightRed
 import com.example.chatapp.ui.theme.LightYellow
 import com.example.chatapp.ui.theme.Yellow
 
+@Preview
+@Composable
+fun PreviewChatScreen() {
+    val navHostController = rememberNavController()// Create a mock NavController for preview
+    ChatScreen(navHostController = navHostController)
+}
+
 @Composable
 fun ChatScreen(navHostController: NavHostController) {
-    val person = navHostController.previousBackStackEntry?.savedStateHandle?.get<Person>("data1") ?: Person()
+    val person = navHostController.previousBackStackEntry?.savedStateHandle?.get<Person>("data1") ?: Person(
+        name = "John Doe", icon = mic // Dummy person for preview
+    )
     var message by remember { mutableStateOf("") }
 
     Box(
@@ -85,6 +95,13 @@ fun ChatScreen(navHostController: NavHostController) {
     }
 }
 
+@Preview
+@Composable
+fun PreviewChatRow() {
+    val chat = Chat(id = 1, message = "Hello!", time = "12:00 PM",direction = true)
+    ChatRow(chat = chat)
+}
+
 @Composable
 fun ChatRow(chat: Chat) {
     Column(
@@ -116,7 +133,7 @@ fun ChatRow(chat: Chat) {
             text = chat.time,
             style = TextStyle(
                 fontSize = 12.sp,
-                color = Gray
+                color = Color.Gray
             ),
             modifier = Modifier.padding(
                 horizontal = 15.dp,
@@ -124,6 +141,16 @@ fun ChatRow(chat: Chat) {
             )
         )
     }
+}
+
+@Preview
+@Composable
+fun PreviewTextFieldComponents() {
+    TextFieldComponents(
+        text = "",
+        modifier = Modifier.padding(16.dp),
+        onValueChange = { }
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -136,13 +163,8 @@ fun TextFieldComponents(
     TextField(
         value = text,
         onValueChange = onValueChange,
-        modifier = modifier.fillMaxWidth(), // Apply the modifier here
+        modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(160.dp),
-        colors = TextFieldDefaults.textFieldColors(
-            containerColor = Gray400,
-            unfocusedIndicatorColor = Color.Transparent,
-            focusedIndicatorColor = Color.Transparent
-        ),
         placeholder = {
             Text(
                 text = "Type Message", style = TextStyle(
@@ -160,12 +182,11 @@ fun TextFieldComponents(
     )
 }
 
-private fun TextFieldDefaults.textFieldColors(
-    containerColor: Color,
-    unfocusedIndicatorColor: Color,
-    focusedIndicatorColor: Color,
-): TextFieldColors {
-    TODO("Not yet implemented")
+
+@Preview
+@Composable
+fun PreviewIconButtonComponentDrawable() {
+    IconButtonComponentDrawable(icon = mic)
 }
 
 @Composable
@@ -183,6 +204,12 @@ fun IconButtonComponentDrawable(
     }
 }
 
+@Preview
+@Composable
+fun PreviewIconButtonComponentImageVector() {
+    IconButtonComponentImageVector(icon = Icons.Default.Add)
+}
+
 @Composable
 fun IconButtonComponentImageVector(
     modifier: Modifier = Modifier,
@@ -198,27 +225,42 @@ fun IconButtonComponentImageVector(
     }
 }
 
+@Preview
+@Composable
+fun PreviewUserEachRow() {
+    val person = Person(name = "John Doe", icon = mic)
+    UserEachRow(person = person)
+}
+
 @Composable
 fun UserEachRow(modifier: Modifier = Modifier, person: Person) {
     Row(
-        modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp),  // Added padding for better UI spacing
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Row {
-            IconComponentsDrawable(icon = person.icon, size = 42.dp)
+            IconComponentsDrawable(icon = person.icon, size = 45.dp)  // Adjusted icon size to 45.dp
             SpacerWidth()
             Column {
                 Text(
-                    text = person.name, style = TextStyle(
-                        color = Color.White, fontSize = 16.sp, fontWeight = FontWeight.Bold
+                    text = person.name,
+                    style = TextStyle(
+                        color = Color.White,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold
                     )
                 )
                 Text(
-                    text = "Online", style = TextStyle(
-                        color = Color.White, fontSize = 14.sp
+                    text = "Online",
+                    style = TextStyle(
+                        color = Color.White,
+                        fontSize = 14.sp
                     )
                 )
             }
         }
-        IconComponentImageVector(icon = Icons.Default.MoreVert, size = 24.dp, tint = Color.White)
+        IconComponentImageVector(icon = Icons.Default.MoreVert, size = 45.dp, tint = Color.White)  // Adjusted icon size to 45.dp
     }
 }

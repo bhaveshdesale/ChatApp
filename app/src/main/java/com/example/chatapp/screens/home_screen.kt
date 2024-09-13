@@ -20,24 +20,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.chatapp.Components.*
 import com.example.chatapp.R
 import com.example.chatapp.data.Person
 import com.example.chatapp.data.personList
 import com.example.chatapp.navigation.Chat1
 import com.example.chatapp.navigation.Chat1
+import com.example.chatapp.navigation.Home
 import com.example.chatapp.ui.theme.DarkGrey
 import com.example.chatapp.ui.theme.Line
 import com.example.chatapp.ui.theme.Yellow
 
+@Preview
+@Composable
+private fun PreviewHomeScreen() {
+    val navHostController = rememberNavController()
+    HomeScreen(navHostController = navHostController)
+}
 @Composable
 fun HomeScreen(navHostController: NavHostController) {
     Box(
@@ -59,7 +69,7 @@ fun HomeScreen(navHostController: NavHostController) {
             ) {
                 BottomSheetSwipe(
                     modifier = Modifier
-                        .align(Alignment.TopCenter)
+                        .align(Alignment.Center)
                         .padding(top = 15.dp)
                 )
                 LazyColumn(modifier = Modifier.padding(top = 30.dp, bottom = 15.dp)) {
@@ -88,7 +98,7 @@ fun UserEachRow(person: Person, onClick: () -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clickable(onClick = onClick)
+            .clickable { onClick() }
             .padding(horizontal = 20.dp, vertical = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -150,7 +160,7 @@ fun UserStoryComponent(person: Person) {
                 .size(60.dp),  // Story size adjusted
             contentAlignment = Alignment.Center
         ) {
-            IconComponentsDrawable(icon = person.icon, size = 45.dp) // Set story icon size to 45.dp
+            IconComponentsDrawable(icon = person.icon, size = 55.dp) // Set story icon size to 45.dp
         }
         SpacerHeight(height = 6.dp)
         Text(
@@ -232,7 +242,7 @@ fun UserStoryLayout(person: Person) {
                 .size(60.dp),  // Story size adjusted
             contentAlignment = Alignment.Center
         ) {
-            IconComponentsDrawable(icon = person.icon, size = 45.dp) // Set story icon size to 45.dp
+            IconComponentsDrawable(icon = person.icon, size = 55.dp) // Set story icon size to 45.dp
         }
         SpacerHeight(height = 6.dp)
         Text(
