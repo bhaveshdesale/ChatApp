@@ -9,17 +9,6 @@
 - **Kotlin**: Chosen for its concise and efficient coding capabilities.
 - **Navigation**: Integrated to manage seamless transitions between screens.
 
-## Screenshots
-
-### App Starting Screen
-![App Starting Screen](https://github.com/bhaveshdesale/ChatApp/8f37cc85-6a3a-41c7-a481-c258c8ca7ca7.jpg)
-
-### Home Screen
-![Home Screen](https://github.com/your-username/chat-app-ui/raw/main/images/home-screen.png)
-
-### Chat Screen
-![Chat Screen](https://github.com/your-username/chat-app-ui/raw/main/images/chat-screen.png)
-
 ## Getting Started
 
 1. **Clone the repository:**
