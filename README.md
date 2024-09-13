@@ -24,7 +24,7 @@
 
 1. **Clone the repository:**
    ```bash
-   (https://github.com/bhaveshdesale/ChatApp.git)
+   https://github.com/bhaveshdesale/ChatApp.git
 2. Open the project in Android Studio.
 
 3. Build and run the project on an emulator or physical device.
