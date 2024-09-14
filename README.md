@@ -26,7 +26,7 @@ Navigation Component
 
 ## Screenshots
 ### App Starting Screen
-![App Starting Screen](https://github.com/your-username/chat-app-ui/raw/main/images/app-starting-screen.png)
+![App Starting Screen](https://github.com/bhaveshdesale/ChatApp/First.jpeg)
 
 ### Home Screen
 ![Home Screen](https://github.com/your-username/chat-app-ui/raw/main/images/home-screen.png)
