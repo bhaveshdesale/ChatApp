@@ -26,13 +26,14 @@ Navigation Component
 
 ## Screenshots
 ### App Starting Screen
-![App Starting Screen](https://github.com/bhaveshdesale/ChatApp/First.jpeg)
+
+![First_Screen](https://github.com/user-attachments/assets/381db6db-314c-4ad5-9ca4-518a4bbf3895)
 
 ### Home Screen
-![Home Screen](https://github.com/your-username/chat-app-ui/raw/main/images/home-screen.png)
+![Home_Screen](https://github.com/user-attachments/assets/9146806f-89ee-49ee-b292-8cb4f9c718a3)
 
 ### Chat Screen
-![Chat Screen](https://github.com/your-username/chat-app-ui/raw/main/images/chat-screen.png)
+![Chat_Screen](https://github.com/user-attachments/assets/6d3dc776-7a8b-4be2-a011-6860466efddc)
 
 Contribution
 Feel free to contribute by submitting issues or pull requests. Feedback and suggestions are welcome!
