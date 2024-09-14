@@ -23,6 +23,17 @@ Jetpack Compose
 Material3 Design
 Kotlin
 Navigation Component
+
+## Screenshots
+### App Starting Screen
+![App Starting Screen](https://github.com/your-username/chat-app-ui/raw/main/images/app-starting-screen.png)
+
+### Home Screen
+![Home Screen](https://github.com/your-username/chat-app-ui/raw/main/images/home-screen.png)
+
+### Chat Screen
+![Chat Screen](https://github.com/your-username/chat-app-ui/raw/main/images/chat-screen.png)
+
 Contribution
 Feel free to contribute by submitting issues or pull requests. Feedback and suggestions are welcome!
 
