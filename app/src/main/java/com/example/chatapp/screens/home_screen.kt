@@ -69,7 +69,7 @@ fun HomeScreen(navHostController: NavHostController) {
             ) {
                 BottomSheetSwipe(
                     modifier = Modifier
-                        .align(Alignment.Center)
+                        .align(Alignment.TopCenter)
                         .padding(top = 15.dp)
                 )
                 LazyColumn(modifier = Modifier.padding(top = 30.dp, bottom = 15.dp)) {
@@ -213,6 +213,13 @@ fun Header(modifier: Modifier = Modifier) {
         }
     }
     Text(text = text)
+}
+
+@Preview
+@Composable
+private fun View1() {
+    ViewStoryLayout()
+    
 }
 
 @Composable
